@@ -22,38 +22,81 @@ If you love PyT, please star our project on GitHub to show your support! :star:
 [#xxxx]: https://github.com/python-security/pyt/pull/xxxx
 [@xxxx]: https://github.com/xxxx
 -->
+
+# Unreleased
+
+#### :tada: New Features
+
+* Added visting functions in the tests of `while` nodes ([#186], thanks [@adrianbn])
+
+[@adrianbn]: https://github.com/adrianbn 
+[#186]: https://github.com/python-security/pyt/pull/186
+
+
 # 0.42
 ##### November 1st, 2018
 
 #### :boom: Breaking Changes
-* Changed trigger file format when specifying specific tainted args ([#182])
+* Changed trigger file format when specifying specific tainted args ([#182], thanks [@bcaller])
 
 #### :tada: New Features
-* Function calls such as `list.append` and `dict.update` now propagate taint to the list or dict ([#181])
+* Function calls such as `list.append` and `dict.update` now propagate taint to the list or dict ([#181], thanks [@bcaller])
 
 #### :bug: Bugfixes
-* IfExp (or ternary) expression handling improved ([#179])
+* IfExp (or ternary) expression handling improved ([#179], thanks [@bcaller])
+
+[#179]: https://github.com/python-security/pyt/pull/179
+[#181]: https://github.com/python-security/pyt/pull/181
+[#182]: https://github.com/python-security/pyt/pull/182
+
 
 # 0.40
 ##### September 11th, 2018
 
 #### :mega: Release Highlights
-* Logging changes. Logging verbosity can be changed with `-v` to `-vvv` ([#172])
+* Logging changes. Logging verbosity can be changed with `-v` to `-vvv` ([#172], thanks [@bcaller])
 
 #### :boom: Breaking Changes
 * Removed `--trim` option ([#169])
 
 #### :tada: New Features
-* Added `--only-unsanitised` flag to not print sanitised vulnerabilities ([#172])
+* Added `--only-unsanitised` flag to not print sanitised vulnerabilities ([#172], thanks [@bcaller])
 
 #### :bug: Bugfixes
-* Recursive functions don't cause `RecursionError` ([#173])
-* Handling of chained functions improved ([#171])
+* Recursive functions don't cause `RecursionError` ([#173], thanks [@bcaller])
+* Handling of chained functions improved ([#171], thanks [@bcaller])
+
+[#169]: https://github.com/python-security/pyt/pull/169
+[#171]: https://github.com/python-security/pyt/pull/171
+[#172]: https://github.com/python-security/pyt/pull/172
+[#173]: https://github.com/python-security/pyt/pull/173
+
 
 # 0.39
 ##### August 21st, 2018
 
-...
+#### :tada: New Features
+
+* Added handling of assignment unpacking e.g. `a, b, c = d` ([#164], thanks [@bcaller])
+* Made file loading and vulnerability order deterministic ([#165], thanks [@bcaller])
+
+#### :bug: Bugfixes
+* Fixed VarsVisitor RuntimeError on code like `f(g(a)(b)(c))` ([#163], thanks [@bcaller])
+
+#### :telescope: Precision
+
+* Taint propagates from methods of tainted objects ([#167], thanks [@bcaller])
+
+#### :snake: Miscellaneous
+
+* Cleaned test cases of extraneous reassignments ([#166], thanks [@bcaller])
+
+[#163]: https://github.com/python-security/pyt/pull/163
+[#164]: https://github.com/python-security/pyt/pull/164
+[#165]: https://github.com/python-security/pyt/pull/165
+[#166]: https://github.com/python-security/pyt/pull/166
+[#167]: https://github.com/python-security/pyt/pull/167
+
 
 # 0.38
 ##### August 2nd, 2018
@@ -143,6 +186,7 @@ If you love PyT, please star our project on GitHub to show your support! :star:
 [#139]: https://github.com/python-security/pyt/pull/139
 [#152]: https://github.com/python-security/pyt/pull/152
 [#156]: https://github.com/python-security/pyt/pull/156
+
 
 # 0.34
 ##### April 24th, 2018
